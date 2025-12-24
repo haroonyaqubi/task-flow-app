@@ -2,7 +2,6 @@
 from django.urls import path
 from .views import RegisterView, MeView, UserListView, UserDetailView
 
-app_name = 'users_app'  # ⬅️ ADD THIS LINE - It's CRITICAL!
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),

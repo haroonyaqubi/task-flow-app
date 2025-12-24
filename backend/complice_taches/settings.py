@@ -204,8 +204,31 @@ SIMPLE_JWT = {
 if IS_RENDER:
     # Production CORS settings
     CORS_ALLOWED_ORIGINS = [
-        "https://task-flow-frontend.onrender.com",
-        "http://localhost:3000",  # For local testing
+        "https://task-flow-app-frontend.onrender.com",  # ← YOUR EXACT FRONTEND URL
+        "https://task-flow-frontend.onrender.com",  # ← Keep this if different
+        "http://localhost:3000",
+    ]
+
+    # Add these additional CORS settings
+    CORS_ALLOW_METHODS = [
+        'DELETE',
+        'GET',
+        'OPTIONS',
+        'PATCH',
+        'POST',
+        'PUT',
+    ]
+
+    CORS_ALLOW_HEADERS = [
+        'accept',
+        'accept-encoding',
+        'authorization',
+        'content-type',
+        'dnt',
+        'origin',
+        'user-agent',
+        'x-csrftoken',
+        'x-requested-with',
     ]
 else:
     # Local development - allow all
